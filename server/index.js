@@ -3,6 +3,7 @@ const app = express();
 
 const mongoose = require("mongoose");
 const db_url = require("./config/db");
+const cors = require("cors");
 
 mongoose.connect(db_url.connection_url, {
     useNewUrlParser: true,
@@ -15,6 +16,12 @@ mongoose.connect(db_url.connection_url, {
 
 
 app.use(express.json());
+let corsOptions = {
+    origin: 'http://localhost:3000',
+    credentials: true
+}
+
+app.use(cors(corsOptions));
 
 app.get('/', (req, res) => res.status(200).send("HELLLOOOOOO"));
 app.use("/questions", require('./routes/questions'));
