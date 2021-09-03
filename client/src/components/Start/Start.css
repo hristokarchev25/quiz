@@ -54,3 +54,31 @@
     font-style: italic;
     border: 1px solid lightgray;
 }
+
+@media screen and (max-width: 640px) {
+    .start__container {
+        background-color: royalblue;
+        margin-top: 300px;
+        width: 300px;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        border-radius: 20px;
+        border: 2px solid lightgray;
+        padding: 20px;
+        color: white;
+        font-weight: bold;
+        box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);
+    }
+    .start__quiz {
+        border-radius: 20px;
+        width: 100%;
+        height: 30px;
+        border: 1px solid;
+        margin-top: 10px;
+        border: 2px solid darkgray;
+        cursor: pointer;
+        font-style: italic;
+        font-size: 15px;
+    }
+}
