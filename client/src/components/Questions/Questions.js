@@ -78,26 +78,23 @@ const Questions = function Questions() {
         <div className='question__page'>
             <div className='questions'>
                 {showScore ? (
-                    <div className='score-section'>
+                    <div className='score__section'>
                         You scored {score} out of {questions.length}
                         <Link to="/"><button className="start__quiz">Try again?</button></Link>
                     </div>
                 ) : (
                     <>
-                       {/*  <div className="round-time-bar">
+                        {/*  <div className="round-time-bar">
                             
                         </div> */}
-                        
+
                         <div className='question__section'>
-                            {/* <div className='question-count'>
-                                <span>Question {currentQuestion + 1}</span>/{questions.length}
-                            </div> */}
-                            <div className='question-text'>{questions[currentQuestion].questionText}</div>
+                            <div className='question__text'>{questions[currentQuestion].questionText}</div>
                             {/* <div className='question-text'>{questions.map((question) => (question[currentQuestion].questionText))}</div> */}
                         </div>
-                        <div className='answer-section'>
+                        <div className='answer__section'>
                             {questions[currentQuestion].answerOptions.map((answerOption) => (
-                                <button className="question__btn" onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
+                                <button className="question__btn" onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}><span className="answer__prefix">&#65;</span>{answerOption.answerText}</button>
                             ))}
                         </div>
                         {/* <div className='answer-section'>
