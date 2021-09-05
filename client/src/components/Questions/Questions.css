@@ -4,6 +4,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
+    flex-direction: column;
 }
 
 
@@ -75,7 +76,7 @@
       color: white;
   }
 
-  .round-time-bar {
+ /*  .round-time-bar {
     margin: 1rem;
     overflow: hidden;
   }
@@ -90,6 +91,11 @@
   @keyframes roundtime {
     to {
       /* More performant than `width` */
-      transform: scaleX(0);
+  /*     transform: scaleX(0);
     }
+  }  */
+  .time__line{
+    height: 8px;
+    width: 300px;
+    background: red;
   }

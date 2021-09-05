@@ -71,41 +71,48 @@ const Questions = function Questions() {
             setShowScore(true);
         }
     };
-
+    const startTimer = (time) => {
+        setInterval(timer, 29);
+        function timer() {
+            time += 1;
+            document.querySelector("time__line").style.width = time + "px";
+        }
+    };
     /* console.log(questions[1].answerOptions); */
 
     return (
-        <div className='question__page'>
-            <div className='questions'>
-                {showScore ? (
-                    <div className='score__section'>
-                        You scored {score} out of {questions.length}
-                        <Link to="/"><button className="start__quiz">Try again?</button></Link>
-                    </div>
-                ) : (
-                    <>
-                        {/*  <div className="round-time-bar">
-                            
-                        </div> */}
+        <>
 
-                        <div className='question__section'>
-                            <div className='question__text'>{questions[currentQuestion].questionText}</div>
-                            {/* <div className='question-text'>{questions.map((question) => (question[currentQuestion].questionText))}</div> */}
+            <div className='question__page'>
+                <div className="time__line" onLoad={startTimer}></div>
+                <div className='questions'>
+
+                    {showScore ? (
+                        <div className='score__section'>
+                            You scored {score} out of {questions.length}
+                            <Link to="/"><button className="start__quiz">Try again?</button></Link>
                         </div>
-                        <div className='answer__section'>
-                            {questions[currentQuestion].answerOptions.map((answerOption) => (
-                                <button className="question__btn" onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}><span className="answer__prefix">&#65;</span>{answerOption.answerText}</button>
-                            ))}
-                        </div>
-                        {/* <div className='answer-section'>
+                    ) : (
+                        <>
+                            <div className='question__section'>
+                                <div className='question__text'>{questions[currentQuestion].questionText}</div>
+                                {/* <div className='question-text'>{questions.map((question) => (question[currentQuestion].questionText))}</div> */}
+                            </div>
+                            <div className='answer__section'>
+                                {questions[currentQuestion].answerOptions.map((answerOption) => (
+                                    <button className="question__btn" onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}><span className="answer__prefix">&#65;</span>{answerOption.answerText}</button>
+                                ))}
+                            </div>
+                            {/* <div className='answer-section'>
 						{questions.map((question) => (question[currentQuestion].answerOptions.map((answerOption) => (
 							<button onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
 						))))}
 					</div> */}
-                    </>
-                )}
+                        </>
+                    )}
+                </div>
             </div>
-        </div>
+        </>
     );
 }
 
