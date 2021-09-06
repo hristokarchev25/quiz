@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 
 const questionSchema = mongoose.Schema({
     questionText: String,
-    answerOptions: [{ answerText: String, isCorrect: Boolean }],
+    answerOptions: [{answerPrefix: String, answerText: String, isCorrect: Boolean }],
 });
 
 
