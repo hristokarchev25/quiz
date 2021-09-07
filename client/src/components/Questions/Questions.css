@@ -3,18 +3,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     flex-direction: column;
 }
 
 
 .questions {
     background-color: #F3F2ED;
-    width: 300px;
+    width: 500px;
     height: fit-content;
     display: flex;
     flex-direction: column;
-    border-radius: 20px;
+    border-radius: 12px;
     border: 2px solid black;
     padding: 20px;
     color: white;
@@ -56,7 +55,7 @@
     font-size: 16px;
     color: black;
     background-color: #F3F2ED;
-    border-radius: 10px;
+    border-radius: 8px;
     display: flex;
     padding: 10px;
     justify-content: flex-start;
@@ -76,26 +75,57 @@
       color: white;
   }
 
- /*  .round-time-bar {
-    margin: 1rem;
-    overflow: hidden;
+  .time__line {
+      margin-bottom: 15px;
   }
-  .round-time-bar div {
+  .time__line > div{
     height: 5px;
-    animation: roundtime calc(var(10) * 1s) steps(var(10))
-      forwards;
-    transform-origin: left center;
+    width: 500px;
     background: linear-gradient(to bottom, red, #900);
   }
 
   @keyframes roundtime {
     to {
-      /* More performant than `width` */
-  /*     transform: scaleX(0);
+      /* More performant than animating `width` */
+      transform: scaleX(0);
     }
-  }  */
-  .time__line{
-    height: 8px;
-    width: 300px;
-    background: red;
   }
+  .time__line > div {
+      animation: roundtime calc(300 * 1s) steps(300) forwards;
+      transform-origin: left center;
+  }
+
+  @media screen and (max-width: 640px) {
+    .questions {
+        background-color: #F3F2ED;
+        width: 300px;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        border-radius: 12px;
+        border: 2px solid black;
+        padding: 20px;
+        color: white;
+        font-weight: bold;
+        box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);
+      }
+      .time__line {
+        margin-bottom: 15px;
+    }
+    .time__line > div{
+      height: 5px;
+      width: 300px;
+      background: linear-gradient(to bottom, red, #900);
+    }
+  
+    @keyframes roundtime {
+      to {
+        /* More performant than animating `width` */
+        transform: scaleX(0);
+      }
+    }
+    .time__line > div {
+        animation: roundtime calc(300 * 1s) steps(300) forwards;
+        transform-origin: left center;
+    }
+}

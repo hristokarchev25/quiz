@@ -35,21 +35,14 @@ const Questions = function Questions() {
             setShowScore(true);
         }
     };
-    const startTimer = (time) => {
-        setInterval(timer, 29);
-        function timer() {
-            time += 1;
-            document.querySelector("time__line").style.width = time + "px";
-        }
-    };
 
     if (loading) {
-        return <LoadingScreen/>;
+        return <LoadingScreen />;
     }
 
     return (
         <div className='question__page'>
-            <div className="time__line"></div>
+
             <div className='questions'>
 
                 {showScore ? (
@@ -59,6 +52,9 @@ const Questions = function Questions() {
                     </div>
                 ) : (
                     <>
+                        <div className="time__line">
+                            <div></div>
+                        </div>
                         <div className='question__section'>
                             <div className='question__text'>{questions[currentQuestion].questionText}</div>
                         </div>
