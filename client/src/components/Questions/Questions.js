@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Questions.css';
+import LoadingScreen from '../LoadingPage/LoadingPage';
 import axios from '../../axios';
 
 const Questions = function Questions() {
     const [questions, setQuestion] = useState([]);
+    const [loading, setLoading] = useState(true);
     useEffect(() => {
         async function fetchData() {
             const req = await axios.get("/questions/all");
 
             setQuestion(req.data);
+            setLoading(false);
             console.log(req.data);
         }
 
@@ -40,9 +43,13 @@ const Questions = function Questions() {
         }
     };
 
+    if (loading) {
+        return <LoadingScreen/>;
+    }
+
     return (
         <div className='question__page'>
-            <div className="time__line" onLoad={startTimer}></div>
+            <div className="time__line"></div>
             <div className='questions'>
 
                 {showScore ? (
@@ -67,6 +74,8 @@ const Questions = function Questions() {
             </div>
         </div>
     );
+
+
 }
 
 
