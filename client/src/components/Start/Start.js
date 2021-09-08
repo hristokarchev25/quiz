@@ -12,11 +12,11 @@ const Start = function Start() {
                     <p>
                         Test your knowledge with our BOOM QUIZ!
                     </p>
-                    <Link to="/rules">
-                        <button className="start__quiz">Rules</button>
+                    <Link to="/about">
+                        <button className="quiz__btn">About Quiz</button>
                     </Link>
                     <Link to="/questions">
-                        <button className="start__quiz">Start Quiz</button>
+                        <button className="quiz__btn">Start Quiz</button>
                     </Link>
                 </div>
             </Slide>

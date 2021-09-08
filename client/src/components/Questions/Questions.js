@@ -24,7 +24,6 @@ const Questions = function Questions() {
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [showScore, setShowScore] = useState(false);
     const [score, setScore] = useState(0);
-    /* const [grade, setGrade] = useState(""); */
 
     const handleAnswerOptionClick = (isCorrect) => {
         if (isCorrect) {
@@ -37,12 +36,6 @@ const Questions = function Questions() {
         } else {
             setShowScore(true);
         }
-/* 
-        if (score >= 18 || score <= 20) {
-            setGrade("Excellent");
-        } else {
-            setGrade("Bad");
-        } */
     };
 
     if (loading) {
@@ -56,8 +49,7 @@ const Questions = function Questions() {
                     {showScore ? (
                         <div className='score__section'>
                             You scored {score} out of {questions.length}
-                            {/* <p>Your grade is {grade}</p> */}
-                            <Link to="/"><button className="start__quiz">Try again?</button></Link>
+                            <Link to="/"><button className="quiz__btn">Try again?</button></Link>
                         </div>
                     ) : (
                         <>
