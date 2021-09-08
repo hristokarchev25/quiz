@@ -26,11 +26,8 @@
     margin-bottom: 20px;
     text-align: center;
     font-style: italic;
-}
-.start__container > h1:hover {
     text-transform: uppercase;
 }
-
 .start__container > p {
     margin-top: 15px;
     font-size: 16px;

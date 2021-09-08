@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Slide from 'react-reveal/Slide';
 import { Link } from 'react-router-dom';
 import './Questions.css';
 import LoadingScreen from '../LoadingPage/LoadingPage';
@@ -22,6 +23,7 @@ const Questions = function Questions() {
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [showScore, setShowScore] = useState(false);
     const [score, setScore] = useState(0);
+    /* const [grade, setGrade] = useState(""); */
 
     const handleAnswerOptionClick = (isCorrect) => {
         if (isCorrect) {
@@ -34,6 +36,12 @@ const Questions = function Questions() {
         } else {
             setShowScore(true);
         }
+        /* 
+                if (score >= 3 && score <= 4) {
+                    setGrade("Excellent");
+                } else {
+                    setGrade("Bad");
+                } */
     };
 
     if (loading) {
@@ -42,32 +50,35 @@ const Questions = function Questions() {
 
     return (
         <div className='question__page'>
-
-            <div className='questions'>
-
-                {showScore ? (
-                    <div className='score__section'>
-                        You scored {score} out of {questions.length}
-                        <Link to="/"><button className="start__quiz">Try again?</button></Link>
-                    </div>
-                ) : (
-                    <>
-                        <div className="time__line">
-                            <div></div>
+            <Slide bottom>
+                <div className='questions'>
+                    {showScore ? (
+                        <div className='score__section'>
+                            You scored {score} out of {questions.length}
+                            {/* <p>Your grade is {grade}</p> */}
+                            <Link to="/"><button className="start__quiz">Try again?</button></Link>
                         </div>
-                        <div className='question__section'>
-                            <div className='question__text'>{questions[currentQuestion].questionText}</div>
-                        </div>
-                        <div className='answer__section'>
-                            {questions[currentQuestion].answerOptions.map((answerOption) => (
-                                <button className="question__btn" onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}><span className="answer__prefix">{answerOption.answerPrefix}</span>{answerOption.answerText}</button>
-                            ))}
-                            {console.log("1")}
-                        </div>
+                    ) : (
+                        <>
+                            <div className="time__line">
+                               <span>Time: </span> <div></div>
+                            </div>
+                            <div className='question__section'>
+                                <div className='question__text'>{questions[currentQuestion].questionText}</div>
+                            </div>
+                            <div className='answer__section'>
 
-                    </>
-                )}
-            </div>
+                                {questions[currentQuestion].answerOptions.map((answerOption) => (
+
+                                    <button className="question__btn" onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}><span className="answer__prefix">{answerOption.answerPrefix}</span>{answerOption.answerText}</button>
+
+                                ))}
+
+                            </div>
+                        </>
+                    )}
+                </div>
+            </Slide>
         </div>
     );
 

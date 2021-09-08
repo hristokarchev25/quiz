@@ -64,14 +64,15 @@
     cursor: pointer;
   }
   .question__btn:hover {
-    background-color: #56a5eb;
-    color: white;
+    /* background-color: lightgreen; */
+    box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.548);
+    /* color: white; */
     border: 2px solid black;
   }
   .answer__prefix {
       padding: 1.5% 2.5%;
       margin-right: 10px;
-      background-color: #56a5eb;
+      background-color: #0B4AF9;
       color: white;
   }
 
