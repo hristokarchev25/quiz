@@ -9,15 +9,15 @@ const Start = function Start() {
             <Slide bottom>
                 <div className="start__container">
                     <h1>Boom Quiz</h1>
-
                     <p>
                         Test your knowledge with our BOOM QUIZ!
                     </p>
-
+                    <Link to="/rules">
+                        <button className="start__quiz">Rules</button>
+                    </Link>
                     <Link to="/questions">
                         <button className="start__quiz">Start Quiz</button>
                     </Link>
-
                 </div>
             </Slide>
         </div>

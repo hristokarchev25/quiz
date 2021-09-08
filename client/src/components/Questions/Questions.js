@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Slide from 'react-reveal/Slide';
+import ScheduleIcon from '@material-ui/icons/Schedule';
 import { Link } from 'react-router-dom';
 import './Questions.css';
 import LoadingScreen from '../LoadingPage/LoadingPage';
@@ -36,12 +37,12 @@ const Questions = function Questions() {
         } else {
             setShowScore(true);
         }
-        /* 
-                if (score >= 3 && score <= 4) {
-                    setGrade("Excellent");
-                } else {
-                    setGrade("Bad");
-                } */
+/* 
+        if (score >= 18 || score <= 20) {
+            setGrade("Excellent");
+        } else {
+            setGrade("Bad");
+        } */
     };
 
     if (loading) {
@@ -61,7 +62,7 @@ const Questions = function Questions() {
                     ) : (
                         <>
                             <div className="time__line">
-                               <span>Time: </span> <div></div>
+                                <span><ScheduleIcon /></span> <div></div>
                             </div>
                             <div className='question__section'>
                                 <div className='question__text'>{questions[currentQuestion].questionText}</div>

@@ -92,8 +92,11 @@
     }
   }
   .time__line > div {
-      animation: roundtime calc(300 * 1s) steps(300) forwards;
+      animation: roundtime calc(1800 * 1s) steps(1800) forwards;
       transform-origin: left center;
+  }
+  .time__line > span {
+      color: black;
   }
 
   @media screen and (max-width: 640px) {
@@ -126,7 +129,10 @@
       }
     }
     .time__line > div {
-        animation: roundtime calc(300 * 1s) steps(300) forwards;
+        animation: roundtime calc(1800 * 1s) steps(1800) forwards;
         transform-origin: left center;
+    }
+    .time__line > span {
+        color: black;
     }
 }

@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import LoadingScreen from './components/LoadingPage/LoadingPage';
 import Start from './components/Start/Start';
+import Rules from './components/Rules/Rules';
 import Questions from './components/Questions/Questions';
 import Error from './components/Error/404';
 
@@ -22,6 +23,7 @@ function App() {
 					<div className="app">
 						<Switch>
 							<Route path="/" exact component={Start} />
+							<Route path="/rules" exact component={Rules} />
 							<Route path="/questions" exact component={Questions} />
 							<Route component={Error} />
 						</Switch>
