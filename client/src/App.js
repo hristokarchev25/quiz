@@ -1,7 +1,6 @@
 import { Switch, Route } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
-import './App.css';
 import LoadingScreen from './components/LoadingPage/LoadingPage';
 import Start from './components/Start/Start';
 import About from './components/About/About';

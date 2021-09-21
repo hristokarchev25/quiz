@@ -8,9 +8,9 @@ const Start = function Start() {
         <div className="start">
             <Slide bottom>
                 <div className="start__container">
-                    <h1>Boom Quiz</h1>
+                    <h1>Karchev Quiz</h1>
                     <p>
-                        Test your knowledge with our BOOM QUIZ!
+                        Test your knowledge with our QUIZ!
                     </p>
                     <Link to="/about">
                         <button className="quiz__btn">About Quiz</button>

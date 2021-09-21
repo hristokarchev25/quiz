@@ -1,4 +1,4 @@
-# BOOM QUIZ
+# KARCHEV QUIZ
 
 MERN project developed by Hristo Karchev.
 
